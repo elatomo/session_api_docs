@@ -255,7 +255,7 @@ POST body:
 	}
 }
 ```
-**Alternative solutions**
+**Alternative solutions** *currently under testing*
 
 ```json
 POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/"
