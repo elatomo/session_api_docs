@@ -1,12 +1,11 @@
 # Session API
 ####Table of contents
-+ [Introduction](<rest-of-url>session_api_docs.md#introduction)
-+ [Quickstart](https://github.com/fredknowsit/session-service/blob/DEV-1206-api-docs/session_api_docs.md#quickstart)
-+ [Workflow diagram](https://github.com/fredknowsit/session-service/blob/DEV-1206-api-docs/session_api_docs.md#quickstart)
-+ [API Reference](https://github.com/fredknowsit/session-service/blob/DEV-1206-api-docs/session_api_docs.md#quickstart)
-	+ [GET /](https://github.com/fredknowsit/session-service/blob/DEV-1206-api-docs/session_api_docs.md#quickstart)
-	+ [POST /query](https://github.com/fredknowsit/session-service/blob/DEV-1206-api-docs/session_api_docs.md#quickstart)
-+ **TODO** *test and finish references after publishing*
++ [Introduction](https://github.com/fredknowsit/session_api_docs#introduction)
++ [Quickstart](https://github.com/fredknowsit/session_api_docs#quickstart)
++ [Workflow diagram](https://github.com/fredknowsit/session_api_docs#quickstart)
++ [API Reference](https://github.com/fredknowsit/session_api_docs#quickstart)
+    + [GET /](https://github.com/fredknowsit/session_api_docs#quickstart)
+	+ [POST /query](https://github.com/fredknowsit/session_api_docs#quickstart)
 
 ## Introduction
 You have put a lot of work and sweat in training your AI expert and now you want to set it free in the digital universe so your users can benefit form its knowledge. You probably have a cool conversational UI in mind for your users to interact with. Using our session API so you can tap into your expert's solution finding capabilities. Don't worry you'll have your expert bot up and running in no time. :)
