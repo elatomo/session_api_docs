@@ -14,6 +14,8 @@ You have put a lot of work and sweat in training your AI expert and now you want
 
 Start a new session by providing a unique session ID and receive a **feature** (question) or a **class** (solution) and a list of options to reply with:
 
+*Note: You can try it out using the ID of the "Zooki" animal expert:* **5887544647657bc7145ea94c**
+
 #####Request
 ```json
 POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/query/"
