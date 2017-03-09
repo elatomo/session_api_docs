@@ -325,7 +325,7 @@ Note: will return an error if requested before a solution has been found.
   "session_id": "1234567890"
 }
 ```
-**Alternatives**
+**Alternatives** *currently under testing*
  
 ```json
 {
