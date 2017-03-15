@@ -280,6 +280,7 @@ Note: will return an error if requested before a solution has been found.
 | session_id | String | A unique session ID that you have to generate |
 | postback | Object | `postback` object, *not on first call* |
 | message | Object | `message` object, *only at end of session* | 
+| dry_run | Boolean | Set to `true` if session should *NOT* be stored for the expert's training | 
 
 ### Postback Object
 
