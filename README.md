@@ -255,7 +255,7 @@ POST body:
 	}
 }
 ```
-**Alternative solutions** *currently under testing*
+**Alternative solutions**
 
 ```json
 POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/"
@@ -325,7 +325,7 @@ Note: will return an error if requested before a solution has been found.
   "session_id": "1234567890"
 }
 ```
-**Alternatives** *currently under testing*
+**Alternatives**
  
 ```json
 {
