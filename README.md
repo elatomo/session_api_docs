@@ -1,5 +1,5 @@
 # Session API
-####Table of contents
+## Table of contents
 + [Introduction](https://github.com/fredknowsit/session_api_docs#introduction)
 + [Quickstart](https://github.com/fredknowsit/session_api_docs#quickstart)
 + [Workflow diagram](https://github.com/fredknowsit/session_api_docs#workflow-diagram)
@@ -16,7 +16,8 @@ Start a new session by providing a unique session ID and receive a **feature** (
 
 *Note: You can try it out using the ID of the "Zooki" animal expert:* **5887544647657bc7145ea94c**
 
-#####Request
+### Request
+
 ```json
 POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/query/"
 
@@ -33,7 +34,8 @@ curl -X POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/qu
     "session_id": "1234567890"
 }'
 ```
-#####Response
+### Response
+
 ```json
 {
   "result": {
@@ -64,7 +66,8 @@ curl -X POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/qu
 
 Reply with one of the payload options and eventually reach a **solution** (class). 
 
-#####Request
+### Request
+
 ```json
 POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id-here/query/"
 
@@ -87,7 +90,8 @@ curl -X POST "https://admin.fredknows.it/session/api/expert-id/5899ee0f04460c5bf
 	}
 }'
 ```
-#####Response
+### Response
+
 ```json
 {
   "result": {
@@ -115,7 +119,7 @@ If the user confirms the solution by sending the reply as in previous steps, the
 
 If the proposed solution doesn't fix the user's problem the user should be asked to give **feedback** with the correct solution. This would be the final request of the session, after which the session is closed:
 
-#####Request
+### Request
 ```json
 POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/query/"
 
@@ -150,7 +154,7 @@ The base URL is `https://admin.fredknows.it/session/api/expert-id/{your-expert-i
 ### Authentication
 Currently the endpoint is open to everyone as long as your expert page is activated. 
 
-##`GET /`
+## `GET /`
 
 Sending a **GET** request to the **base URL** retrives the **custom texts** configured in the Admin panel:
 #### Response schema
