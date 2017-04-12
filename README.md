@@ -180,7 +180,8 @@ curl -X GET "https://admin.fredknows.it/session/api/expert-id/your-expert-id/"
     "solved_no": "I sincerely apologize for the inconvenience.",
     "solved_yes": "Great! In case you were happy with my service, feel free to spread the word."
   },
-  "title": "your_project_title"
+  "title": "your_project_title",
+  "media_url": "https://s3-eu-west-1.amazonaws.com/fred-media/57bc52f351dcc257e954080e/class-5878d83204460c71ba3351bc-1484837262.png"
 }
 ```
 You should be familiar with these texts from the interaction with the expert in the Admin panel. If you wish to integrate these, retrieve them once at start-up.
