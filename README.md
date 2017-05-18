@@ -60,7 +60,8 @@ curl -X POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/qu
     ], 
 
   }, 
-  "session_id": "1234567890"
+  "session_id": "1234567890",
+  "progress": 0.26
 }
 ```
 
@@ -112,7 +113,8 @@ curl -X POST "https://admin.fredknows.it/session/api/expert-id/5899ee0f04460c5bf
     ], 
 
   }, 
-  "session_id": "1234567890"
+  "session_id": "1234567890",
+  "progress": 0.90
 }
 ```
 If the user confirms the solution by sending the reply as in previous steps, the session is complete a new one can be started. 
@@ -328,7 +330,8 @@ Note: will return an error if requested before a solution has been found.
     ], 
 
   }, 
-  "session_id": "1234567890"
+  "session_id": "1234567890",
+  "progress": 0.26
 }
 ```
 **Alternatives**
@@ -373,6 +376,7 @@ Note: will return an error if requested before a solution has been found.
 | id | String | ID of entity |
 | media_url | String | Image URL of entity |
 | options | Array | Array with `option` objects |
+| progress | Float | Progress to successfully completing a session |
 
 ### Option Object
 | Name | Type | Description |
