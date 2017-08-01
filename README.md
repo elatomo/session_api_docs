@@ -15,7 +15,7 @@ Where `<your-expert-id>` is the identifier of your expert.
 
 For the purpose of this tutorial, we will use the sample [zooki animal expert](https://expert.fredknows.it/5887544647657bc7145ea94c).
 
-Let's start a new session by providing a unique session identifier (`session_id`):
+Let's **start a new session** by providing a unique session identifier (`session_id`):
 
 ```shell
 curl -X POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
