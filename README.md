@@ -9,6 +9,7 @@ A reference jquery implementation is also available on our public [jquery expert
 ## Table of contents
 
 + [Quickstart](#quickstart)
++ [Flowchart](#flowchart)
 + [Result types](#result-types)
 + [Retrieving project custom texts](#retrieving-project-custom-texts)
 + [Help?](#need-help-found-a-bug)
@@ -177,7 +178,11 @@ Which will return the following response:
 ```
 
 As you can see, the result _type_ of this response is `end of game`. We will
-find out more about possible response types in the next section.
+find out more about possible response types in [result types section](#result-types).
+
+## Flowchart
+
+![Expert API Flowchart](expert-api-flowchart.png)
 
 ## Result types
 
