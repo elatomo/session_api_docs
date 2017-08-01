@@ -8,137 +8,178 @@ A reference jquery implementation is also available on our public [jquery expert
 
 ## Quickstart
 
-Start a new session by providing a unique session ID and receive a **feature** (question) or a **class** (solution) and a list of options to reply with:
+The base API URL for an expert is:
+`https://admin.fredknows.it/session/api/expert-id/<your-expert-id>/`,
+where `<your-expert-id>` is the identifier of your expert.
 
-*Note: You can try it out using the ID of the "Zooki" animal expert:* **5887544647657bc7145ea94c**
+For the purpose of this tutorial, we will use the sample [zooki animal expert](https://expert.fredknows.it/5887544647657bc7145ea94c). Its expert id is: `5887544647657bc7145ea94c`.
 
-### Request
+Let's start a new session by providing a unique session identifier (`session_id`) using [HTTPie](https://httpie.org):
 
-```json
-POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/query/"
+```shell
+http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ session_id="123456789"
+```
 
-Headers:
-"Content-Type: application/json; charset=utf-8"
+The expert response will look like this:
 
-POST body:
+```
 {
-	"session_id": "1234567890"
+    "session_id": "123456789",
+    "result": {
+        "id": "5887584904460c2223a449d3",
+        "type": "feature",
+        "title": "How many arms & legs does your animal have?",
+        "description": "Please note: wings, tentacles or fins do not count. Only the sum of arms and legs.",
+        "media_url": "https://s3-eu-west-1.amazonaws.com/fred-media/5887544647657bc7145ea94c/featuregroup-5887584904460c2223a449d3-1488538503.png",
+        "options": [
+            {
+                "label": "0",
+                "payload": "feature-57c82a4d04460c3ca6350ef7-y"
+            },
+            {
+                "label": "2",
+                "payload": "feature-57c82a4d04460c3ca6350ef8-y"
+            },
+            {
+                "label": "4",
+                "payload": "feature-57c82a4d04460c3ca6350ef9-y"
+            },
+            {
+                "label": "6",
+                "payload": "feature-57c82a4d04460c3ca6350efa-y"
+            },
+            {
+                "label": "8",
+                "payload": "feature-57c82a4d04460c3ca6350efb-y"
+            },
+            {
+                "label": "more than 8",
+                "payload": "feature-57c82a4d04460c3ca6350efc-y"
+            }
+        ],
+        "custom_texts": "...",
+        "feedback_forms": null
+    },
+    "progress": 0.0
 }
 ```
-```bash
-curl -X POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/query/" -H "Content-Type: application/json" -d '{
-    "session_id": "1234567890"
-}'
-```
-### Response
 
-```json
-{
-  "result": {
-    "type": "feature"   
-    "title": "Can you log in to your computer?", 
-    "description": null, 
-    "id": "58763fb804460c787949f25e", 
-    "media_url": null, 
-    "options": [
-      {
-        "label": "Yes", 
-        "payload": "feature-58763fb804460c787949f25e-y"
-      }, 
-      {
-        "label": "No", 
-        "payload": "feature-58763fb804460c787949f25e-n"
-      }, 
-      {
-        "label": "I don't know", 
-        "payload": "feature-58763fb804460c787949f25e-idk"
-      }
-    ], 
+The response is a JSON dictionary. The most relevant keys are:
 
-  }, 
-  "session_id": "1234567890",
-  "progress": 0.26
-}
+1. `session_id`: The session identifier provided when starting the session. You
+   will reuse this id in subsequent requests.
+2. `result`: The result of your request.
+  1. `type`: typically a **feature** (a question) or a **class** (a solution).
+  2. `options`: a list of **payloads** to reply with.
+
+Let's tell our _animal_ expert that the animal we are thinking has _0 legs_. For that, we'll send the payload `feature-57c82a4d04460c3ca6350ef7-y`:
+
+```shell
+http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
+  session_id="123456789" \
+  postback:='{"payload": "feature-57c82a4d04460c3ca6350ef7-y"}'
 ```
 
-Reply with one of the payload options and eventually reach a **solution** (class). 
-
-### Request
-
-```json
-POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id-here/query/"
-
-Headers:
-"Content-Type: application/json; charset=utf-8"
-
-POST body:
-{
-	"session_id": "1234567890",
-	"postback": {
-		"payload": "feature-58763fb804460c787949f25e-n"
-	}
-}
-```
-```bash
-curl -X POST "https://admin.fredknows.it/session/api/expert-id/5899ee0f04460c5bfb00c1ad/query/" -H "Content-Type: application/json" -d '{
-    "session_id": "1234567890",
-    "postback": {
-		"payload": "feature-589c930004460c3ad64702d2-y"
-	}
-}'
-```
-### Response
+Which returns:
 
 ```json
 {
-  "result": {
-    "type": "class"   
-    "title": "There could be a typo in your password.", 
-    "description": null, 
-    "id": "58763fb804460c787949f25e", 
-    "media_url": null, 
-    "options": [
-      {
-        "label": "Yes, that helped", 
-        "payload": "class-58763fb804460c787949f25e-y"
-      }, 
-      {
-        "label": "No, it didn't work", 
-        "payload": "class-58763fb804460c787949f25e-n"
-      }
-    ], 
-
-  }, 
-  "session_id": "1234567890",
-  "progress": 0.90
+    "session_id": "123456789",
+    "result": {
+        "id": "57c82a4d04460c3ca6350efe",
+        "type": "feature"
+        "title": "Is the animal a predator?",
+        "description": null,
+        "media_url": null,
+        "options": [
+            {
+                "label": "button_yes",
+                "payload": "feature-57c82a4d04460c3ca6350efe-y"
+            },
+            {
+                "label": "button_no",
+                "payload": "feature-57c82a4d04460c3ca6350efe-n"
+            },
+            {
+                "label": "button_idk",
+                "payload": "feature-57c82a4d04460c3ca6350efe-idk"
+            }
+        ],
+        "custom_texts": "...",
+        "feedback_forms": null
+    },
+    "progress": 0.04
 }
 ```
-If the user confirms the solution by sending the reply as in previous steps, the session is complete a new one can be started. 
 
-If the proposed solution doesn't fix the user's problem the user should be asked to give **feedback** with the correct solution. This would be the final request of the session, after which the session is closed:
+As you can see, the expert replied with another **feature** (_question_), and three possible **payloads**.
 
-### Request
+Our expert will keep on asking **features** until it:
+
+- Finds a **class** (a _solution_)
+- Runs out of questions.
+
+A **class** response will look like this:
+
 ```json
-POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/query/"
-
-Headers:
-"Content-Type: application/json; charset=utf-8"
-
-POST body:
 {
-	"session_id": "1234567890",
-	"message": {
-		"text": "The user name was actually wrong, not the password."
-	}
+    "session_id": "123456789",
+    "result": {
+        "id": "5811bca73a641c69dd85ac0d", 
+        "type": "class"
+        "title": "I think you're looking for a piranha, right?", 
+        "media_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pirhana06.jpg/250px-Pirhana06.jpg", 
+        "options": [
+            {
+                "label": "button_correct_solution", 
+                "payload": "class-5811bca73a641c69dd85ac0d-y"
+            }, 
+            {
+                "label": "button_wrong_solution", 
+                "payload": "class-5811bca73a641c69dd85ac0d-n"
+            }
+        ], 
+        "custom_texts": "...",
+        "feedback_forms": "..."
+    }, 
+    "progress": 0.95
 }
 ```
-```bash
-curl -X POST "https://admin.fredknows.it/session/api/expert-id/your-expert-id/query/" -H "Content-Type: application/json" -d '{
-	"session_id": "1234567890",
-	"message": {
-		"text": "The user name was actually wrong, not the password."
-	}
-}'
+
+We could confirm the class proposed by our expert sending the payload `class-5811bca73a641c69dd85ac0d-y`:
+
+```shell
+http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
+  session_id="123456789" \
+  postback:='{"payload": "class-5811bca73a641c69dd85ac0d-y"}'
+```
+
+Which will return the following response:
+
+```json
+{
+    "session_id": "lep1zlh78fd2kked66ep45"
+    "result": {
+        "id": "5811bca73a641c69dd85ac0d", 
+        "type": "end of game"
+        "title": "Class feedback was correctly submitted", 
+        "description": "", 
+        "media_url": "", 
+        "options": [], 
+        "custom_texts": "...",
+        "feedback_forms": null
+    }, 
+    "progress": 1.0
+}
+```
+
+As you can see, the result _type_ of this response is `end of game`. We will find out more about possible response types in the next section.
+
+
+
+
+
+```
 ```
 
 ## Workflow diagram
