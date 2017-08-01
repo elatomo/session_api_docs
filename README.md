@@ -1,14 +1,10 @@
-# Session API
-## Table of contents
-+ [Introduction](https://github.com/fredknowsit/session_api_docs#introduction)
-+ [Quickstart](https://github.com/fredknowsit/session_api_docs#quickstart)
-+ [Workflow diagram](https://github.com/fredknowsit/session_api_docs#workflow-diagram)
-+ [API Reference](https://github.com/fredknowsit/session_api_docs#api-reference)
-    + [GET /](https://github.com/fredknowsit/session_api_docs#get-)
-	+ [POST /query](https://github.com/fredknowsit/session_api_docs#post-query)
+# Fredknows.it expert API
 
-## Introduction
-You have put a lot of work and sweat in training your AI expert and now you want to set it free in the digital universe so your users can benefit form its knowledge. You probably have a cool conversational UI in mind for your users to interact with. Using our session API so you can tap into your expert's solution finding capabilities. Don't worry you'll have your expert bot up and running in no time. :)
+[Fredknows.it](https://www.fredknows.it) lets you build your own AI expert.
+
+This repository contains the documentation for the expert API.
+
+A reference jquery implementation is also available on our public [jquery expert repository](https://github.com/fredknowsit/jquery-expert).
 
 ## Quickstart
 
