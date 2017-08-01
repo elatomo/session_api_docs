@@ -6,6 +6,13 @@ This repository contains the documentation for the expert API.
 
 A reference jquery implementation is also available on our public [jquery expert repository](https://github.com/fredknowsit/jquery-expert).
 
+## Table of contents
+
++ [Quickstart](#quickstart)
++ [Result types](#result-types)
++ [Retrieving project custom texts](#retrieving-project-custom-texts)
++ [Help?](#Need-help?-Found-a-bug?)
+
 ## Quickstart
 
 The base API expert URL is:
