@@ -57,9 +57,7 @@ The expert response will look like this:
                 "label": "more than 8",
                 "payload": "feature-57c82a4d04460c3ca6350efc-y"
             }
-        ],
-        "custom_texts": "...",
-        "feedback_forms": null
+        ]
     },
     "progress": 0.0
 }
@@ -106,9 +104,7 @@ Which returns:
                 "label": "button_idk",
                 "payload": "feature-57c82a4d04460c3ca6350efe-idk"
             }
-        ],
-        "custom_texts": "...",
-        "feedback_forms": null
+        ]
     },
     "progress": 0.04
 }
@@ -140,9 +136,7 @@ A **class** response will look like this:
                 "label": "button_wrong_solution", 
                 "payload": "class-5811bca73a641c69dd85ac0d-n"
             }
-        ], 
-        "custom_texts": "...",
-        "feedback_forms": "..."
+        ]
     }, 
     "progress": 0.95
 }
@@ -167,15 +161,14 @@ Which will return the following response:
         "title": "Class feedback was correctly submitted", 
         "description": "", 
         "media_url": "", 
-        "options": [], 
-        "custom_texts": "...",
-        "feedback_forms": null
+        "options": []
     }, 
     "progress": 1.0
 }
 ```
 
-As you can see, the result _type_ of this response is `end of game`. We will find out more about possible response types in the next section.
+As you can see, the result _type_ of this response is `end of game`. We will
+find out more about possible response types in the next section.
 
 ## Result types
 
