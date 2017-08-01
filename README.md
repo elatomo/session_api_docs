@@ -190,9 +190,12 @@ As you can see, the result _type_ of this response is `end of game`. We will fin
 | `closed`                  | The session is closed.                             |
 
 
+## Retrieving project custom texts
 
+Project _custom texts_ defined in the [admin panel](https://admin.fredknows.it) could be retrieved sending a `GET` request to the base expert endpoint:
 
 ```
+http https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/
 ```
 
 
