@@ -114,11 +114,11 @@ Which returns:
 }
 ```
 
-As you can see, the expert replied with another **feature** (_question_), and three possible **payloads**.
+As you can see, the expert replied with another **feature** (_question_), and three possible payloads.
 
-Our expert will keep on asking **features** until it:
+Our expert will keep on asking features until it:
 
-- Finds a **class** (a _solution_)
+- Finds a _class_ (a _solution_)
 - Runs out of questions.
 
 A **class** response will look like this:
