@@ -8,11 +8,12 @@ A reference jquery implementation is also available on our public [jquery expert
 
 ## Quickstart
 
-The base API URL for an expert is:
-`https://admin.fredknows.it/session/api/expert-id/<your-expert-id>/`,
-where `<your-expert-id>` is the identifier of your expert.
+The base API expert URL is:
+`https://admin.fredknows.it/session/api/expert-id/<your-expert-id>/`
 
-For the purpose of this tutorial, we will use the sample [zooki animal expert](https://expert.fredknows.it/5887544647657bc7145ea94c). Its expert id is: `5887544647657bc7145ea94c`.
+Where `<your-expert-id>` is the identifier of your expert.
+
+For the purpose of this tutorial, we will use the sample [zooki animal expert](https://expert.fredknows.it/5887544647657bc7145ea94c).
 
 Let's start a new session by providing a unique session identifier (`session_id`) using [HTTPie](https://httpie.org):
 
