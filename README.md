@@ -15,11 +15,12 @@ Where `<your-expert-id>` is the identifier of your expert.
 
 For the purpose of this tutorial, we will use the sample [zooki animal expert](https://expert.fredknows.it/5887544647657bc7145ea94c).
 
-Let's start a new session by providing a unique session identifier (`session_id`) using [HTTPie](https://httpie.org):
+Let's start a new session by providing a unique session identifier (`session_id`):
 
 ```shell
-http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
-  session_id="123456789"
+curl -X POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
+  -H 'Content-Type: application/json' \
+  -d '{"session_id": "123456789"}'
 ```
 
 The expert response will look like this:
@@ -76,9 +77,9 @@ Let's tell our _animal_ expert that the animal we are thinking has _0 legs_. For
 that, we'll send the payload `feature-57c82a4d04460c3ca6350ef7-y`:
 
 ```shell
-http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
-  session_id="123456789" \
-  postback:='{"payload": "feature-57c82a4d04460c3ca6350ef7-y"}'
+curl -X POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
+  -H 'Content-Type: application/json' \
+  -d '{"session_id": "123456789", "postback": {"payload": "feature-57c82a4d04460c3ca6350ef7-y"}}'
 ```
 
 Which returns:
@@ -146,9 +147,9 @@ A **class** response will look like this:
 We could confirm the class proposed by our expert sending the payload `class-5811bca73a641c69dd85ac0d-y`:
 
 ```shell
-http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
-  session_id="123456789" \
-  postback:='{"payload": "class-5811bca73a641c69dd85ac0d-y"}'
+curl -X POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
+  -H 'Content-Type: application/json' \
+  -d '{"session_id": "123456789", "postback": {"payload": "class-5811bca73a641c69dd85ac0d-y"}}'
 ```
 
 Which will return the following response:
