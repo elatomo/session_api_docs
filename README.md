@@ -177,7 +177,17 @@ Which will return the following response:
 
 As you can see, the result _type_ of this response is `end of game`. We will find out more about possible response types in the next section.
 
+## Result types
 
+| Result type               | Description                                        |
+|---------------------------|----------------------------------------------------|
+| `class`                   | A class (solution).                                |
+| `feature`                 | A feature (question).                              |
+| `no-good-question-to-ask` | The expert found no good questions to ask.         |
+| `max-questions-reached`   | The expert reached the maximum limit of questions. |
+| `no-question-no-solution` | The expert exhausted all available questions.      |
+| `end of game`             | The game is finished.                              |
+| `closed`                  | The session is closed.                             |
 
 
 
