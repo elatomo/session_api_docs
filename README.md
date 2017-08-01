@@ -11,7 +11,7 @@ A reference jquery implementation is also available on our public [jquery expert
 + [Quickstart](#quickstart)
 + [Result types](#result-types)
 + [Retrieving project custom texts](#retrieving-project-custom-texts)
-+ [Help?](#Need-help?-Found-a-bug?)
++ [Help?](#need-help-found-a-bug)
 
 ## Quickstart
 
