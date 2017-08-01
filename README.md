@@ -191,12 +191,6 @@ As you can see, the result _type_ of this response is `end of game`. We will fin
 
 
 
-```
-```
-
-## Workflow diagram
-![expert_flow](https://s3.eu-central-1.amazonaws.com/expert-flow-img/exper_flow.png "Expert flow")
-
 ## API Reference
 
 ### Base URL
