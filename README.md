@@ -198,4 +198,6 @@ Project _custom texts_ defined in the [admin panel](https://admin.fredknows.it) 
 http https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/
 ```
 
+## Need help? Found a bug?
 
+Just [submit an issue](https://www.github.com/fredknows.it/session_api_docs/issues) to this repository if you need any help.
