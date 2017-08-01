@@ -17,7 +17,8 @@ For the purpose of this tutorial, we will use the sample [zooki animal expert](h
 Let's start a new session by providing a unique session identifier (`session_id`) using [HTTPie](https://httpie.org):
 
 ```shell
-http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ session_id="123456789"
+http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
+  session_id="123456789"
 ```
 
 The expert response will look like this:
@@ -72,7 +73,8 @@ The response is a JSON dictionary. The most relevant keys are:
   1. `type`: typically a **feature** (a question) or a **class** (a solution).
   2. `options`: a list of **payloads** to reply with.
 
-Let's tell our _animal_ expert that the animal we are thinking has _0 legs_. For that, we'll send the payload `feature-57c82a4d04460c3ca6350ef7-y`:
+Let's tell our _animal_ expert that the animal we are thinking has _0 legs_. For
+that, we'll send the payload `feature-57c82a4d04460c3ca6350ef7-y`:
 
 ```shell
 http POST https://admin.fredknows.it/session/api/expert-id/5887544647657bc7145ea94c/query/ \
@@ -87,7 +89,7 @@ Which returns:
     "session_id": "123456789",
     "result": {
         "id": "57c82a4d04460c3ca6350efe",
-        "type": "feature"
+        "type": "feature",
         "title": "Is the animal a predator?",
         "description": null,
         "media_url": null,
@@ -126,7 +128,7 @@ A **class** response will look like this:
     "session_id": "123456789",
     "result": {
         "id": "5811bca73a641c69dd85ac0d", 
-        "type": "class"
+        "type": "class",
         "title": "I think you're looking for a piranha, right?", 
         "media_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Pirhana06.jpg/250px-Pirhana06.jpg", 
         "options": [
@@ -158,10 +160,10 @@ Which will return the following response:
 
 ```json
 {
-    "session_id": "lep1zlh78fd2kked66ep45"
+    "session_id": "lep1zlh78fd2kked66ep45",
     "result": {
         "id": "5811bca73a641c69dd85ac0d", 
-        "type": "end of game"
+        "type": "end of game",
         "title": "Class feedback was correctly submitted", 
         "description": "", 
         "media_url": "", 
